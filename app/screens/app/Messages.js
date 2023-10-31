@@ -56,7 +56,7 @@ const messages = [
   },
 ];
 
-const Messages = () => {
+const Messages = ({ navigation }) => {
   return (
     <AppScreen style={{ backgroundColor: COLORS.white }}>
       <Text style={styles.title}>Messages</Text>
@@ -66,7 +66,9 @@ const Messages = () => {
           data={messages}
           keyExtractor={(item) => item.id.toString()}
           showsVerticalScrollIndicator={false}
-          renderItem={({ item }) => <MessageCard />}
+          renderItem={({ item }) => (
+            <MessageCard onPress={() => navigation.navigate("mchat")} />
+          )}
           contentContainerStyle={{ paddingBottom: 80 }}
         />
       </View>

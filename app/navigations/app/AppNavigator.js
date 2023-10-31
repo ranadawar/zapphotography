@@ -2,14 +2,12 @@ import { Image, StyleSheet, Text, View } from "react-native";
 import React from "react";
 
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import Home from "../../screens/app/Home";
-import AllBookings from "../../screens/app/AllBookings";
-import Messages from "../../screens/app/Messages";
+
 import { COLORS, FONTS } from "../../constants/theme";
-import MyProfile from "../../screens/app/MyProfile";
 import HomeStackNavigator from "./app/HomeStackNavigator";
 import BookingStackNavigator from "./app/BookingStackNavigator";
 import MessagesStackNavigator from "./app/MessagesStackNavigator";
+import ProfileNavigator from "./app/ProfileNavigator";
 
 const Tab = createBottomTabNavigator();
 
@@ -102,7 +100,7 @@ const AppNavigator = () => {
       />
       <Tab.Screen
         name="Profile"
-        component={MyProfile}
+        component={ProfileNavigator}
         options={{
           tabBarLabelStyle: { display: "none" },
           tabBarIcon: ({ focused, color, size }) => (

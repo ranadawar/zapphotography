@@ -10,7 +10,7 @@ const MessageCard = ({
   unreadMessages = [1, 2, 3],
 }) => {
   return (
-    <TouchableOpacity style={styles.mainContainer}>
+    <TouchableOpacity onPress={onPress} style={styles.mainContainer}>
       <View style={styles.leftContainer}>
         <Image
           resizeMode="contain"

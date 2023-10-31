@@ -4,14 +4,15 @@ import AppScreen from "../../components/AppScreen";
 import { COLORS, FONTS } from "../../constants/theme";
 import Separator from "../../components/Separator";
 import ProfileScreenCard from "../../components/profile/ProfileScreenCard";
+import { useNavigation } from "@react-navigation/native";
 
-const MyProfile = () => {
+const MyProfile = ({ navigation }) => {
   return (
     <AppScreen style={{ paddingHorizontal: 0 }}>
       <View style={styles.mainContainer}>
         <Text style={styles.title}>Profile</Text>
         <Separator style={styles.separator} />
-        <ProfileCard />
+        <ProfileCard onPressEdit={() => navigation.navigate("pedit")} />
 
         <View style={styles.bottomContainer}>
           <Text style={styles.setting}>Setting</Text>
@@ -62,7 +63,7 @@ const ProfileCard = ({
         <Text style={styles.name}>{name}</Text>
         <Text style={styles.username}>@{username}</Text>
       </View>
-      <TouchableOpacity style={styles.editBtn}>
+      <TouchableOpacity onPress={onPressEdit} style={styles.editBtn}>
         <Image
           resizeMode="contain"
           source={require("../../../assets/icons/edit.png")}
