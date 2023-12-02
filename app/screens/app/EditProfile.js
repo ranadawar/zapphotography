@@ -76,6 +76,7 @@ const styles = StyleSheet.create({
   },
   mainContainer: {
     flex: 1,
+    paddingHorizontal: 20,
   },
   imagePicker: {
     justifyContent: "center",

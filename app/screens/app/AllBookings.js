@@ -7,7 +7,7 @@ import BookingCard from "../../components/BookingCard";
 
 const books = [1, 2, 3, 4, 5, 6];
 
-const AllBookings = () => {
+const AllBookings = ({ navigation }) => {
   const [bookings, setBookings] = useState(books);
   return (
     <AppScreen>
@@ -20,7 +20,11 @@ const AllBookings = () => {
           <FlatList
             data={bookings}
             keyExtractor={(item) => item.toString()}
-            renderItem={({ item }) => <BookingCard />}
+            renderItem={({ item }) => (
+              <BookingCard
+                onPressDetails={() => navigation.navigate("bbookingdetails")}
+              />
+            )}
             showsVerticalScrollIndicator={false}
             contentContainerStyle={{ paddingBottom: 220 }}
           />
@@ -33,7 +37,9 @@ const AllBookings = () => {
 export default AllBookings;
 
 const styles = StyleSheet.create({
-  mainContainer: {},
+  mainContainer: {
+    paddingHorizontal: 20,
+  },
   title: {
     fontFamily: FONTS.bold,
     fontSize: 24,

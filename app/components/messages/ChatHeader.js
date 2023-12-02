@@ -2,14 +2,16 @@ import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
 import { COLORS, FONTS } from "../../constants/theme";
 
-const ChatHeader = ({ name = "Grace", online = "Online" }) => {
+const ChatHeader = ({ name = "Grace", online = "Online", onPressBack }) => {
   return (
     <View style={styles.mainContainer}>
-      <Image
-        resizeMode="contain"
-        style={styles.backIcon}
-        source={require("../../../assets/icons/back.png")}
-      />
+      <TouchableOpacity onPress={onPressBack}>
+        <Image
+          resizeMode="contain"
+          style={styles.backIcon}
+          source={require("../../../assets/icons/back.png")}
+        />
+      </TouchableOpacity>
       <TouchableOpacity style={styles.centerContainer}>
         <Image
           resizeMode="contain"
@@ -53,6 +55,7 @@ const styles = StyleSheet.create({
   mainContainer: {
     flexDirection: "row",
     alignItems: "center",
+    paddingHorizontal: 20,
   },
   name: {
     fontFamily: FONTS.regular,

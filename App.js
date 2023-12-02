@@ -4,6 +4,7 @@ import { StyleSheet, Text, View } from "react-native";
 import AppNavigator from "./app/navigations/app/AppNavigator";
 import { useFonts } from "expo-font";
 import { COLORS } from "./app/constants/theme";
+import AuthNavigator from "./app/navigations/auth/AuthNavigator";
 
 export default function App() {
   const theme = {
@@ -28,6 +29,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <AppNavigator />
+      {/* <AuthNavigator /> */}
     </NavigationContainer>
   );
 }

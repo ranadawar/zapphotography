@@ -58,7 +58,7 @@ const messages = [
 
 const Messages = ({ navigation }) => {
   return (
-    <AppScreen style={{ backgroundColor: COLORS.white }}>
+    <AppScreen style={{ backgroundColor: COLORS.white, paddingHorizontal: 20 }}>
       <Text style={styles.title}>Messages</Text>
       <AppTextSearchInput />
       <View style={{ paddingBottom: 20 }}>
@@ -84,5 +84,6 @@ const styles = StyleSheet.create({
     fontFamily: FONTS.bold,
     textAlign: "center",
     fontSize: 18,
+    marginVertical: 10,
   },
 });

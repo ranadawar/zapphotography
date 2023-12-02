@@ -11,6 +11,7 @@ const BookingCard = ({
   timeSlot = "10:00 AM - 11:00 AM",
   jobDone = "Scheduled",
   professionalName = "William",
+  onPressDetails,
 }) => {
   const statusColor = "hHelol";
   console.log(statusColor.toLowerCase());
@@ -27,7 +28,7 @@ const BookingCard = ({
       <Separator />
       <View style={styles.statusContainer}>
         <Text>Status</Text>
-        <ColorChanger status="Pending" />
+        <ColorChanger status={status} />
       </View>
 
       <View style={styles.dateContainer}>
@@ -59,7 +60,11 @@ const BookingCard = ({
           </View>
         </View>
         <View style={styles.profileRight}>
-          <AppButton title="View Details" style={styles.viewDetailsBtn} />
+          <AppButton
+            onPress={onPressDetails}
+            title="View Details"
+            style={styles.viewDetailsBtn}
+          />
         </View>
       </View>
     </View>
